@@ -1,0 +1,95 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma de gestão de estoque da distribuidora QUIZ">
+    <title>DjangoSite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading pure-menu-link">Distribuidora</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+                <a href="{% url 'estoque' %}" class="pure-menu-link">Estoque</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="{% url 'produto' %}" class="pure-menu-link">Produto</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="{% url 'novo' %}" class="pure-menu-link">Cadastro</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="{% url 'entrada' %}" class="pure-menu-link">Entrada</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="{% url 'saida' %}" class="pure-menu-link">Saída</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Distrituidora</h1>
+        <!--<p class="splash-subhead">
+            Gestão de Estoque
+        </p>-->
+        <p>
+            <a href="{% url 'estoque' %}" class="pure-button pure-button-primary">Estoque</a>
+        </p>
+        <p>
+            <a href="{% url 'produto' %}" class="pure-button pure-button-primary">Produtos</a>
+        </p>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="content">
+    {% block content %} 
+    {% endblock %} 
+
+    </div>
+    <div class="content">
+        <h2 class="content-head is-center"></h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa"></i>
+                </h3>
+                <p>
+
+                </p>
+            </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <!--<img width="300" alt="File Icons" class="pure-img-responsive" src="">-->
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon"></h2>
+
+            <p>
+                
+            </p>
+        </div>
+    </div>
+
+
+</div>
+<div class="footer l-box is-center">
+    Desenvolvido por Alésio Torres.
+</div>
+
+</body>
+</html>
