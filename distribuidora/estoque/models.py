@@ -11,6 +11,13 @@ class Produto(models.Model):
     entry_date = models.DateTimeField('Data cadastro', auto_created=True, default=None)
     change_date = models.DateTimeField('Data atualização', auto_now=True)
 
+    def __str__ (self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Produto'
+        verbose_name_plural = 'Produtos'
+
 class Estoque(models.Model):
     barcode = models.CharField(max_length=100)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
@@ -18,4 +25,7 @@ class Estoque(models.Model):
     is_entry = models.BooleanField(default=True)
     entry_date = models.DateTimeField('Data entrada', auto_created=True, default=None)
     change_date = models.DateTimeField('Data atualização', auto_now=True)
+
+    class Meta:
+        verbose_name = 'Estoque'
 
