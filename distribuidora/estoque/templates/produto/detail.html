@@ -9,13 +9,6 @@
 </aside>
 {% endif %}
 
-{% if estoque %} 
-<ul>
-    {% for e in estoque %}
-    <li><a href="produto/{{ produto.id }}">{{ e.name }}</a></li>
-    {% endfor %}
-</ul>
-{% else %} 
-<p> Não há estoque cadastrado </p>
-{% endif %}
+{{ produto.id }} - {{ produto.name }} - {{ produto.brand }} - {{ produto.flavor }} - {{ produto.size }} - {{ produto.entry_date }} - {{ produto.change_date}}
+
 {% endblock %}

@@ -9,13 +9,4 @@
 </aside>
 {% endif %}
 
-{% if estoque %} 
-<ul>
-    {% for e in estoque %}
-    <li><a href="produto/{{ produto.id }}">{{ e.name }}</a></li>
-    {% endfor %}
-</ul>
-{% else %} 
-<p> Não há estoque cadastrado </p>
-{% endif %}
 {% endblock %}

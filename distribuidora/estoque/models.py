@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Modelagem do estoque de produtos.
 
@@ -10,7 +11,7 @@ class Produto(models.Model):
     image = models.ImageField(blank=True, null=True, upload_to='media/images')
     entry_date = models.DateTimeField('Data cadastro', auto_created=True, default=None)
     change_date = models.DateTimeField('Data atualização', auto_now=True)
-    due_date = models.DateField('Data de vencimento')
+    due_date = models.DateField('Data de vencimento', null=True, blank=True)
 
     def __str__ (self):
         return self.name
