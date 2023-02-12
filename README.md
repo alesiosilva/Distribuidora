@@ -9,26 +9,26 @@ Registro de cada tipo de produto conforme características
 Registro entrada/saída com quantidade de produtos por código de barras cadastrado
 
 ## Views Produto
-#### produto/novo
+### produto/novo
 Formulário para cadastro das informações
 
-#### produto/
+### produto/
 Lista com todos produtos já cadastrados com link individual direcionando para a edição do mesmo
 
-#### produto/produto_id/ 
+### produto/produto_id/ 
 Template do formulário de cadastro com dados do produto consultado permitindo edição e função SALVAR
 
-#### produto/edita/produto_id/
+### produto/edita/produto_id/
 Template de confirmação da edição
 
 ## Views Estoque
-#### estoque
+### estoque
 Exibe o relatório de sumarização dos tipos de produtos com quantidade e períodos de entrada/saída
 
-#### entrada
+### entrada
 Formulário para cadastro do código de barra com quantidade e vínculo com o produto.
 
 Acidiona 1 registro no banco por cada código de barras, se já existir, apenas atualiza incrementando quantidade
 
-#### saida
+### saida
 Remove a quantidade infromada, ou apenas 1 unidade, de acordo a leitura do código de barras
