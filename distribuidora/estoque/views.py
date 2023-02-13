@@ -1,8 +1,10 @@
-# from django.http import Http404
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
+# from django.http import Http404
 # from django.http import HttpResponse
 from .models import Produto, Estoque
+from .forms import *
 
 # Views para PRODUTO.
 # URL: /produto/
@@ -37,8 +39,18 @@ def edit(request, produto_id):
     return render(request, 'produto/edit.html')
 
 # URL: /produto/novo/
-def new(request):
-    return render(request, 'produto/new.html')
+def register(request):
+    template = 'produto/register.html'
+    form = ProdutoForm(request.POST or None)
+
+    if form.is_valid():
+        produto = Produto.objects.get(pk=request.POST['produto'])
+        form.save()
+        form = ProdutoForm()
+        messages.success(request, 'Produto cadastrado com sucesso!')
+        return render(request, template, {'form': form})
+
+    return render(request, template, {'form': form})
 
 # Views para ESTOQUE
 # URL: /estoque/
